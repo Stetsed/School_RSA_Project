@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+	<!-- Here we define the stylesheet for the Menu, and the background color. -->
+	<link href="/Stylesheets/style.css" rel="stylesheet">
+  <!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
+	<title>JavaScript RSA Decryption</title>
+  <!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
+  <meta charset="UTF-8">
+  <!-- Here we define the search-engine keywords, this basically means when a search-engine indexer indexes your website it will basically add these as tags. -->
+  <meta name="keywords" content="School Project, Simple RSA Project">
+  <!-- This is the short description of the webstie -->
+  <meta name="description" content="Contains simple RSA explination, RSA Funtions">
+  <!-- This holds author information of a website -->
+  <meta name="author" content="327892">
+  <!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+  </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+	</script>
+	<script type="text/javascript">
+		// Call this code when the page is done loading.
+          $(function() {
+    
+            // We run an decryption function when "Decrypt" button is pressed.
+            $('#decrypttt').click(function() {
+    
+              // Encrypt with the public key...
+              var decrypt = new JSEncrypt();
+              decrypt.setPrivateKey($('#privkey').val());
+              var uncrypted = decrypt.decrypt($('#input').val());
+    
+              // How we output the unencrypted tekst with a variable called txtOutput and then set the input textarea to the output.
+              var txtOutput = document.getElementById("input");
+              txtOutput.value = uncrypted
+            });
+          });
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
+		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
+		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
+		<li><a href="/Functions/generate.html">Generate</a></li>
+	</ul>
+	<label for="privkey">Private Key</label><br/>
+    <textarea id="privkey" name="privkey" class="defaultTextBox" type="text" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQ
+WMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNR
+aY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4gwQco1KRMDSmXSMkDwIDAQAB
+AoGAfY9LpnuWK5Bs50UVep5c93SJdUi82u7yMx4iHFMc/Z2hfenfYEzu+57fI4fv
+xTQ//5DbzRR/XKb8ulNv6+CHyPF31xk7YOBfkGI8qjLoq06V+FyBfDSwL8KbLyeH
+m7KUZnLNQbk8yGLzB3iYKkRHlmUanQGaNMIJziWOkN+N9dECQQD0ONYRNZeuM8zd
+8XJTSdcIX4a3gy3GGCJxOzv16XHxD03GW6UNLmfPwenKu+cdrQeaqEixrCejXdAF
+z/7+BSMpAkEA8EaSOeP5Xr3ZrbiKzi6TGMwHMvC7HdJxaBJbVRfApFrE0/mPwmP5
+rN7QwjrMY+0+AbXcm8mRQyQ1+IGEembsdwJBAN6az8Rv7QnD/YBvi52POIlRSSIM
+V7SwWvSK4WSMnGb1ZBbhgdg57DXaspcwHsFV7hByQ5BvMtIduHcT14ECfcECQATe
+aTgjFnqE/lQ22Rk0eGaYO80cc643BXVGafNfd9fcvwBMnk0iGX0XRsOozVt5Azil
+psLBYuApa66NcVHJpCECQQDTjI2AQhFc1yRnCU/YgDnSpJVm1nASoRUnU8Jfm3Oz
+uku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876
+-----END RSA PRIVATE KEY-----</textarea><br/>
+    <label for="input">Text to decrypt:</label><br/>
+    <textarea id="input" name="input" class="defaultTextBox" type="text" cols=70>Enter your RSA encrypted tekst here.</textarea><br/>
+    <input id="decrypttt" class="button" type="button" value="Decrypt" /><br/>
+    <h3> What are we doing?</h3>
+    <p>
+      What we are doing here is taking the value of "privkey", then using the JSEncrypt Decrypt function to decrypt the encrypted tekst from "input". Which is then outputted to the 'Input' tekst box replacing the encrypted string of tekst.
+    </p>
+  </body>
+</html>

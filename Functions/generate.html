@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+	<!-- Here we defne some extra CSS for the generation page which makes the button look nicer and the selection aswell and link the sitewide style.css -->
+	<link href="/Stylesheets/generate.css" rel="stylesheet">\
+	<link href="/Stylesheets/style.css" rel="stylesheet">
+	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
+	<title>JavaScript RSA Generation</title>
+	<!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
+	<meta charset="UTF-8">
+	<!-- Here we define the search-engine keywords, this basically means when a search-engine indexer indexes your website it will basically add these as tags. -->
+	<meta name="keywords" content="School Project, Simple RSA Project">
+	<!-- This is the short description of the webstie -->
+	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
+	<!-- This holds author information of a website -->
+	<meta name="author" content="327892">
+	<!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+
+	</script>
+	<script type="text/javascript">
+		$(function () {
+    var generateKeys = function () {
+      //Set the size of the key that should be generated.
+      var sKeySize = $('#keysizee')[0].value;
+      // Parse the keysize to the value of keySize
+      var keySize = parseInt(sKeySize);
+      // Define the crypt function.
+      var crypt = new JSEncrypt({default_key_size: keySize});
+      // Now with the function we defined earlier we now run getkey which generates the keypair.
+      crypt.getKey();
+      // Now we set #privkey and #pubkey to there respective keys that where generated.
+      $('#privkey').val(crypt.getPrivateKey());
+      $('#pubkey').val(crypt.getPublicKey());
+    };
+
+    // If they wish to generate new keys.
+    $('#Generate').click(generateKeys);
+    generateKeys();
+  });
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
+		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
+		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
+		<li><a href="/Functions/generate.html">Generate</a></li>
+	</ul>
+	<label for="keysizee">Keysize</label>
+<div class="select">
+  <select id="keysizee">
+    <option value="512">512 Bits</option>
+    <option value="1024">1024 Bits</option>
+    <option value="2048">2048 Bits</option>
+    <option value="4096">4096 Bits</option>
+  </select>
+  <span class="focus"></span>
+</div>
+    <label for="privkey">Private Key</label><br/>
+    <textarea id="privkey" class="defaultTextBox" cols="65">Enter your wanted keysize, click generate and your Private Key will be generted.</textarea><br/>
+    <label for="pubkey">Public Key</label><br/>
+    <textarea id="pubkey" class="defaultTextBox" cols="65">Enter your wanted keysize, click generate and your Public Key will be generted.</textarea><br/>
+    <input id="Generate" class="button" type="button" value="Generate" /><br/>
+    <h3> What are we doing?</h3>
+    <p>
+      Here we are generating the RSA PuK and PrK, which is then used to encrypt decrypt and other such RSA functions. What we do is take the argument from the "Keysize" input field which is the select box. 
+      <br>
+      <br>
+      Then we are takig this and parsing it so JSenrypt can use it, which then generates the keypair once the function is activated which is done when the button is pressed which let's us generate as many keypairs as we want. 
+      <br>
+      <br>
+      Once we have all of this we output the PrK and PuK with there respective get functions, which are then outputed to the pubkey and privkey tekst boxes ready to be copied.
+    </p>
+  </body>
+</html>
