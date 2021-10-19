@@ -28,7 +28,7 @@
         // Run an encryption function with JSEncrypt
         $('#testme').click(function() {
 
-          // Set and encrypt with the public key...
+          // We set the RSA public key from the field "#pubkey" and then use this to encrypt "#input"
           var encrypt = new JSEncrypt();
           encrypt.setPublicKey($('#pubkey').val());
           var encrypted = encrypt.encrypt($('#input').val());

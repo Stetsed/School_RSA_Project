@@ -14,10 +14,13 @@
 	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
 	<!-- This holds author information of a website -->
 	<meta name="author" content="327892">
-	<!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
+	<!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions, and crypto-js for some more logic -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 
 	</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+  </script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
 
 	</script>
@@ -29,12 +32,12 @@
             // We run an encryption function when "Decrypt" button is pressed.
             $('#Sign').click(function() {
     
-              // Sign the tekst from "Input" with the key from "privkey" and the SHA256 algorithm.
+              // We take the tekst from "#input" then with the privatekey from "#privkey" we sign it with the SHA256 from CryptoJS.
               var sign = new JSEncrypt();
               sign.setPrivateKey($('#privkey').val());
               var signature = sign.sign($('#input').val(), CryptoJS.SHA256, "sha256");
 
-              // Now we output previosly gotten signature to the "Signature" box from the signature output
+              // Now we find the element with the ID of "Signature", and then set the result of the signing to that element.
               var txtOutput = document.getElementById("Signature");
               txtOutput.value = signature
             });
@@ -46,7 +49,7 @@
   
               var signature = document.getElementById("Signature").value;
               
-              // Verify with the public key...
+              // We take the publickey from "#pubkey", and then with this, combined with the signature and the SHA256 from CryptoJS to verify the message from "#input" and then set "verified" which will be true if it matches and false if it doesn't.
               var verify = new JSEncrypt();
               verify.setPublicKey($('#pubkey').val());
               var verified = verify.verify($('#input').val(), signature, CryptoJS.SHA256);
