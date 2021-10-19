@@ -70,10 +70,10 @@
     <input id="Generate" class="button" type="button" value="Generate" /><br/>
     <h3> What are we doing?</h3>
     <p>
-      Here we are generating the RSA PuK and PrK, which is then used to encrypt decrypt and other such RSA functions. What we do is take the argument from the "Keysize" input field which is the select box. 
+      Here we are generating the RSA PuK and PrK, which is then used to encrypt, decrpt and other such RSA functions. What we do is take the argument from the "Keysize" input field which is the select box. 
       <br>
       <br>
-      Then we are takig this and parsing it so JSenrypt can use it, which then generates the keypair once the function is activated which is done when the button is pressed which let's us generate as many keypairs as we want. 
+      We are then parsing this key as an integer so that JSEncrypt can use it, then we define "crypt" which holds this and is then used in crypt.GetKey to generate the keys.
       <br>
       <br>
       Once we have all of this we output the PrK and PuK with there respective get functions, which are then outputed to the pubkey and privkey tekst boxes ready to be copied.
