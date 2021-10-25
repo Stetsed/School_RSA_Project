@@ -50,3 +50,12 @@ body {
   display: inline-block;
   font-size: 16px;
 }
+
+.move {
+   border: 1px outset blue;
+   background-color: rgb(136, 143, 243);
+   height:60px;
+   width:60px;
+   cursor:pointer;
+}
+
