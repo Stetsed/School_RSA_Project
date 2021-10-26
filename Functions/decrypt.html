@@ -4,24 +4,27 @@
 <head>
 	<!-- Here we define the stylesheet for the Menu, and the background color. -->
 	<link href="/Stylesheets/style.css" rel="stylesheet">
-  <!-- This section handles all the Style's and JS for the top navbar -->
-  <link href="/Stylesheets/menu.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="/Javascript/Menu.js"></script>
-  <!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
+	<!-- This section handles all the Style's and JS for the top navbar -->
+	<link href="/Stylesheets/menu.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="/Javascript/Menu.js">
+	</script>
+	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
 	<title>JavaScript RSA Decryption</title>
-  <!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
-  <meta charset="UTF-8">
-  <!-- Here we define the search-engine keywords, this basically means when a search-engine indexer indexes your website it will basically add these as tags. -->
-  <meta name="keywords" content="School Project, Simple RSA Project">
-  <!-- This is the short description of the webstie -->
-  <meta name="description" content="Contains simple RSA explination, RSA Funtions">
-  <!-- This holds author information of a website -->
-  <meta name="author" content="327892">
-  <!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
+	<!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
+	<meta charset="UTF-8">
+	<!-- Here we define the search-engine keywords, this basically means when a search-engine indexer indexes your website it will basically add these as tags. -->
+	<meta name="keywords" content="School Project, Simple RSA Project">
+	<!-- This is the short description of the webstie -->
+	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
+	<!-- This holds author information of a website -->
+	<meta name="author" content="327892">
+	<!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-  </script>
+
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+
 	</script>
 	<script type="text/javascript">
 		// Call this code when the page is done loading.
@@ -44,13 +47,20 @@
 </head>
 
 <body>
-	<ul>
-		<li><a href="/index.html">Home</a></li>
-		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
-		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
-		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
-		<li><a href="/Functions/generate.html">Generate</a></li>
-	</ul>
+	<div class="navbar">
+		<a href="/index.html">Home</a>
+		<div class="dropdown">
+			<button class="dropbtn" onclick="myFunction()">Functions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/Functions/decrypt.html">Decrypt</a>
+    <a href="/Functions/encrypt.html">Encrypt</a>
+    <a href="/Functions/generate.html">Generate</a>
+    <a href="/Functions/SignVerify.html">Sign/Verify</a>
+  </div>
+  </div> 
+</div>
 	<label for="privkey">Private Key</label><br/>
     <textarea id="privkey" name="privkey" class="defaultTextBox" type="text" cols="65">-----BEGIN RSA PRIVATE KEY-----
 MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQ

@@ -50,22 +50,19 @@
 </head>
 
 <body>
-	<ul>
-		<li><a href="/index.html">Home</a></li>
-		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
-		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
-		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
-		<li><a href="/Functions/generate.html">Generate</a></li>
-	</ul>
-	<label for="keysizee">Keysize</label>
-<div class="select">
-  <select id="keysizee">
-    <option value="512">512 Bits</option>
-    <option value="1024">1024 Bits</option>
-    <option value="2048">2048 Bits</option>
-    <option value="4096">4096 Bits</option>
-  </select>
-  <span class="focus"></span>
+<div class="navbar">
+  <a href="/index.html">Home</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Functions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/Functions/decrypt.html">Decrypt</a>
+    <a href="/Functions/encrypt.html">Encrypt</a>
+    <a href="/Functions/generate.html">Generate</a>
+    <a href="/Functions/SignVerify.html">Sign/Verify</a>
+  </div>
+  </div> 
 </div>
     <label for="privkey">Private Key</label><br/>
     <textarea id="privkey" class="defaultTextBox" cols="65">Enter your wanted keysize, click generate and your Private Key will be generted.</textarea><br/>

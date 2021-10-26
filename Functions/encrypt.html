@@ -46,13 +46,20 @@
 </head>
 
 <body>
-	<ul>
-		<li><a href="/index.html">Home</a></li>
-		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
-		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
-		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
-		<li><a href="/Functions/generate.html">Generate</a></li>
-	</ul>
+<div class="navbar">
+  <a href="/index.html">Home</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Functions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/Functions/decrypt.html">Decrypt</a>
+    <a href="/Functions/encrypt.html">Encrypt</a>
+    <a href="/Functions/generate.html">Generate</a>
+    <a href="/Functions/SignVerify.html">Sign/Verify</a>
+  </div>
+  </div> 
+</div>
 	<label for="pubkey">Public Key</label><br/>
     <textarea id="pubkey" class="defaultTextBox" cols="65">-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
