@@ -4,6 +4,10 @@
 <head>
 	<!-- Here we define the stylesheet for the Menu, and the background color. -->
 	<link href="/Stylesheets/style.css" rel="stylesheet">
+  <!-- This section handles all the Style's and JS for the top navbar -->
+  <link href="/Stylesheets/menu.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="/Javascript/Menu.js"></script>
 	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
 	<title>JavaScript RSA Encryption</title>
 	<!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
@@ -17,13 +21,20 @@
 </head>
 
 <body>
-	<ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="/Functions/encrypt.html">Encrypt</a></li>
-		<li><a href="/Functions/decrypt.html">Decrypt</a></li>
-		<li><a href="/Functions/SignVerify.html">Sign/Verify</a></li>
-		<li><a href="/Functions/generate.html">Generate</a></li>
-	</ul>
+<div class="navbar">
+  <a href="/index.html">Home</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Functions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/Functions/decrypt.html">Decrypt</a>
+    <a href="/Functions/encrypt.html">Encrypt</a>
+    <a href="/Functions/generate.html">Generate</a>
+    <a href="/Functions/SignVerify.html">Sign/Verify</a>
+  </div>
+  </div> 
+</div>
 	<h1> Welcome to my RSA project website </h1>
 	<p> 
     You can navigate around the website and find each major feature of RSA and an        example of how to use it, you may start
