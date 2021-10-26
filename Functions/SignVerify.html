@@ -119,7 +119,7 @@ T0OR3JJ/SMrevIhQWwIDAQAB
     <p>
       Here we have 2 processes which I will explain, verification and singing: 
 
-      Let's start with singing, this works by using the mathmatical link between a public and private key, you sign a message with the RSA PrK and then somebody with the signature, combined with the correct hash and PuK will prove that it was signed by that specific private key. This is commonly used in secure exchanges because you know that the message was 100% from that recipient.
+      Let's start with singing, this works by using the mathmatical link between a public and private key, you sign a message with the RSA PrK and then somebody with the signature, combined with the correct hash and PuK will prove that it was signed by that specific private key. This is commonly used in secure exchanges because you know that the message was 100% from that recipient, if the key hasn't been compromised.
       <br>
       <br>
       We implement singing with the JSEncrypt library which has a function which takes the arguments from the "PrivKey" field, the message from "Input" and the SHA512 algorithm to sign the message.
