@@ -8,6 +8,15 @@
   <link href="/Stylesheets/menu.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="/Javascript/Menu.js"></script>
+  <!--Import the JS specific for this sub-page and the JQuery and JSencrypt Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+  </script>
+    <script type="text/javascript" src="/Javascript/signverify.js">
+  </script>
 	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
 	<title>JavaScript RSA Sign/Verify</title>
 	<!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
@@ -18,57 +27,6 @@
 	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
 	<!-- This holds author information of a website -->
 	<meta name="author" content="327892">
-	<!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions, and crypto-js for some more logic -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-
-	</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
-  </script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
-
-	</script>
-	<script type="text/javascript">
-		$(function () {
-    
-          $(function() {
-    
-            // We run an encryption function when "Decrypt" button is pressed.
-            $('#Sign').click(function() {
-    
-              // We take the tekst from "#input" then with the privatekey from "#privkey" we sign it with the SHA256 from CryptoJS.
-              var sign = new JSEncrypt();
-              sign.setPrivateKey($('#privkey').val());
-              var signature = sign.sign($('#input').val(), CryptoJS.SHA256, "sha256");
-
-              // Now we find the element with the ID of "Signature", and then set the result of the signing to that element.
-              var txtOutput = document.getElementById("Signature");
-              txtOutput.value = signature
-            });
-          });
-          $(function() {
-    
-            // We run an verify function when "Verify" button is pressed.
-            $('#Verify').click(function() {
-  
-              var signature = document.getElementById("Signature").value;
-              
-              // We take the publickey from "#pubkey", and then with this, combined with the signature and the SHA256 from CryptoJS to verify the message from "#input" and then set "verified" which will be true if it matches and false if it doesn't.
-              var verify = new JSEncrypt();
-              verify.setPublicKey($('#pubkey').val());
-              var verified = verify.verify($('#input').val(), signature, CryptoJS.SHA256);
-
-              // Here we make an alert of "The Signature Matches The Message" if verified(Which is decided by the Signature, Hash and Input) it will be true and as such will pass the if statement, else it will give a warning.
-              if (verified) {
-                alert("The Signature Matches The Message");
-              }
-              else {
-                alert("This Signature Does Not Match The Message & Key Combo")
-              }
-            });
-          });
-  });
-	</script>
 </head>
 
 <body>

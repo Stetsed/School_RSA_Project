@@ -8,6 +8,13 @@
   <link href="/Stylesheets/menu.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="/Javascript/Menu.js"></script>
+  <!--Import the JS specific for this sub-page and the JQuery and JSencrypt Library-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+  </script>
+    <script type="text/javascript" src="/Javascript/encrypt.js">
+  </script>
   <!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
 	<title>JavaScript RSA Encryption</title>
   <!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
@@ -19,29 +26,6 @@
   <!-- This holds author information of a website -->
   <meta name="author" content="327892">
   <!-- Here we define our librarys which are JQuery which is a standard overall library for logic and we use JSEncrypt for our RSA Functions -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-  </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
-	</script>
-
-	</script>
-	<script type="text/javascript">
-		// Call this code when the page is done loading.
-      $(function() {
-
-        // Run an encryption function with JSEncrypt
-        $('#testme').click(function() {
-
-          // We set the RSA public key from the field "#pubkey" and then use this to encrypt "#input"
-          var encrypt = new JSEncrypt();
-          encrypt.setPublicKey($('#pubkey').val());
-          var encrypted = encrypt.encrypt($('#input').val());
-
-          // Now we we output the variable "Encrypted" to the textarea of "Input"
-          var txtOutput = document.getElementById("input");
-          txtOutput.value = encrypted
-        });
-      });
 	</script>
 </head>
 
