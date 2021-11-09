@@ -3,46 +3,43 @@
 
 <head>
 	<!-- Here we defne some extra CSS for the generation page which makes the button look nicer and the selection aswell and link the sitewide style.css -->
-	<link href="/Stylesheets/generate.css" rel="stylesheet">
-	<link href="/Stylesheets/style.css" rel="stylesheet">
-  <!-- This section handles all the Style's and JS for the top navbar -->
-  <link href="/Stylesheets/menu.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="/Javascript/Menu.js"></script>
-  <!--Import the JS specific for this sub-page and the JQuery and JSencrypt Library-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	<link href="/Stylesheets/stylerino.css" rel="stylesheet">
+	<!-- This section handles all the Style's and JS for the top navbar -->
+	<!-- Material Icon CDN -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/Stylesheets/burger.css" rel="stylesheet">
+	<!--Import the JS specific for this sub-page and the JQuery and JSencrypt Library-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
 	</script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
-  </script>
-    <script type="text/javascript" src="/Javascript/generate.js">
-  </script>
-	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js">
+
+	</script>
+	<script type="text/javascript" src="/Javascript/generate.js">
+
+	</script>
+	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit, and some other stuff -->
 	<title>JavaScript RSA Generation</title>
-	<!-- Here we define the charachter set which the website uses which isn't required but can in some situtations be useful but here we are using UTF-8 which is pretty standard -->
 	<meta charset="UTF-8">
-	<!-- Here we define the search-engine keywords, this basically means when a search-engine indexer indexes your website it will basically add these as tags. -->
 	<meta name="keywords" content="School Project, Simple RSA Project">
-	<!-- This is the short description of the webstie -->
 	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
-	<!-- This holds author information of a website -->
 	<meta name="author" content="327892">
 </head>
 
 <body>
-<div class="navbar">
-  <a href="/index.html">Home</a>
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Functions
-    <i class="fa fa-caret-down"></i>
+	<ul class="menu">
+		<li><a class="menuItem" href="/index.html">Home</a></li>
+		<li><a class="menuItem" href="/Functions/decrypt.html">Decrypt</a></li>
+		<li><a class="menuItem" href="/Functions/encrypt.html">Encrypt</a></li>
+		<li><a class="menuItem" href="/Functions/generate.html">Generate</a></li>
+		<li><a class="menuItem" href="/Functions/SignVerify.html">Sign/Verify</a></li>
+	</ul>
+	<button class="hamburger">
+    <!-- material icons https://material.io/resources/icons/ -->
+    <i class="menuIcon material-icons">menu</i>
+    <i class="closeIcon material-icons">close</i>
   </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="/Functions/decrypt.html">Decrypt</a>
-    <a href="/Functions/encrypt.html">Encrypt</a>
-    <a href="/Functions/generate.html">Generate</a>
-    <a href="/Functions/SignVerify.html">Sign/Verify</a>
-  </div>
-  </div> 
-	<label for="keysizee">Keysize</label>
+<label for="keysizee">Keysize</label>
 <div class="select">
   <select id="keysizee">
     <option value="512">512 Bits</option>
@@ -69,4 +66,5 @@
       Once we have all of this we output the PrK and PuK with there respective get functions, which are then outputed to the pubkey and privkey tekst boxes ready to be copied.
     </p>
   </body>
+  <script type="text/Javascript" src="/Javascript/burger.js"></script>
 </html>
