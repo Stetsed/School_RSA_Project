@@ -108,3 +108,19 @@ body {
   background-color: #e9f2fd;
   padding: 1rem;
 }
+
+.defaultTextBox {
+    height: 100px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.button{
+    height: 30px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.CenterLabel{
+    margin: 0 auto;
+}
