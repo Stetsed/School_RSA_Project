@@ -3,7 +3,7 @@
 
 <head>
 	<!-- Here we define the stylesheet for the Menu, and the background color. -->
-	<link href="/Stylesheets/stylerino.css" rel="stylesheet">
+	<link href="/Stylesheets/index.css" rel="stylesheet">
 	<!-- This section handles all the Style's and JS for the top navbar -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="/Stylesheets/burger.css" rel="stylesheet">
@@ -29,19 +29,17 @@
     <i class="closeIcon material-icons">close</i>
   </button>
 	<h1> Welcome to my RSA project website </h1>
-	<p> 
-    You can navigate around the website and find each major feature of RSA and an        example of how to use it, you may start
+	<p class="parapgrah">
+    You can navigate around the website and find each major feature of RSA and an example of how to use it, you may start
 		in <a href="generate.html">Generate</a> to generate yourself an RSA keypair. And then head over to the encryption section
 		to make your first message, each section will explain what we are doing :D.
 	</p>
-	<p>
+	<p class="parapgrah">
 		On this website we are using a library called JSEncrypt which handels all Decryption, Encryption, Generation, Singing, Verifyin
-		and all other jobs related to handeling the RSA keys. This is imported from the cloudflare CDN so for people who want to
-		be sure we would recommend generating the keys on PC as this allows for higher entropy when generating the RSA keys and
-		also allows better verifability as browser based JS may be poisioned by the CDN.
+		and all other jobs related to handeling the RSA keys. And then using a few other smaller libraries such as crypto-js for smaller tasks.
 	</p>
 	<h3> Basics of RSA and Threats </h3>
-	<p>
+	<p class="parapgrah">
 		RSA is an asymetric encryption. On a fundemental level this means that there is a private and public key, this public key
 		can be known to everybody because it is mathmatically improbable(Not impossible, read on for more info) that you could
 		find the factor of the private key from the public key NIST in there <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf>publication</a>
@@ -49,7 +47,7 @@
 		link you can verify that message signed with a private key is correct because of the public key, but the only real way
 		to get from a PuK to a PrK is by bruteforcing.
 	</p>
-	<p>
+	<p class="parapgrah">
 		There is a problem with RSA, which also counts for ECC and most other public key encryptions. This is Quantam Computers running
 		shor's algorithm. While traditional computing would require far longer than the lifetime of the universe with even all
 		computing combined to break sufficiently long keys. Computing Quantam Computing with Shor's algorithm let's a sufficiently
@@ -57,10 +55,6 @@
 		talks about the threats of quantam computers. But as this moment in time using RSA 2048 or 4096 is sufficiently strong in
 		terms of security and in time that this could be broken by Quantam Computers, there should be new PQC Encryption Standards
 		to replace it.
-	</p>
-	<p>
-		Warning: We cannot recover any lost RSA keys as these are not stored anywhere so make sure to store your keypair in a safe
-		location as anybody who can get his hands on this key can decrypt any previosly encrypted messages.
 	</p>
 	<img src="favicon.ico" alt="Encryption" style="max-width:20%;height:auto" >
 </body>
