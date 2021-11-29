@@ -28,33 +28,19 @@
     <i class="menuIcon material-icons">menu</i>
     <i class="closeIcon material-icons">close</i>
   </button>
-	<h1> Welcome to my RSA project website </h1>
+	<h1 class="parapgrah"> Welcome to my RSA project website </h1>
 	<p class="parapgrah">
     You can navigate around the website and find each major feature of RSA and an example of how to use it, you may start
 		in <a href="/Functions/generate.html">Generate</a> to generate yourself an RSA keypair. And then head over to the encryption section
 		to make your first message, each section will explain what we are doing :D.
+    <br>
+    <br>
+		On this website we are using a library called JSEncrypt which handels all Decryption, Encryption, Generation, Singing, Verifying
+		and all other jobs related to handeling the RSA keys. And then using a few other smaller libraries such as crypto-js for smaller tasks like hashing.
 	</p>
+	<h3 class="parapgrah"> Basics of RSA </h3>
 	<p class="parapgrah">
-		On this website we are using a library called JSEncrypt which handels all Decryption, Encryption, Generation, Singing, Verifyin
-		and all other jobs related to handeling the RSA keys. And then using a few other smaller libraries such as crypto-js for smaller tasks.
-	</p>
-	<h3> Basics of RSA and Threats </h3>
-	<p class="parapgrah">
-		RSA is an asymetric encryption. On a fundemental level this means that there is a private and public key, this public key
-		can be known to everybody because it is mathmatically improbable(Not impossible, read on for more info) that you could
-		find the factor of the private key from the public key NIST in there <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf>publication</a>
-		stated that an RSA key of 2048-bit's provides 112 bits of security or 5.192x10^33 posiblities. but because of there mathmatical
-		link you can verify that message signed with a private key is correct because of the public key, but the only real way
-		to get from a PuK to a PrK is by bruteforcing.
-	</p>
-	<p class="parapgrah">
-		There is a problem with RSA, which also counts for ECC and most other public key encryptions. This is Quantam Computers running
-		shor's algorithm. While traditional computing would require far longer than the lifetime of the universe with even all
-		computing combined to break sufficiently long keys. Computing Quantam Computing with Shor's algorithm let's a sufficiently
-		powerful Quantum Computer, which has 4096 Qubits for a key of 2048-bits. The article <a href="http://www.cs.tufts.edu/comp/116/archive/fall2015/zkirsch.pdf">here</a>
-		talks about the threats of quantam computers. But as this moment in time using RSA 2048 or 4096 is sufficiently strong in
-		terms of security and in time that this could be broken by Quantam Computers, there should be new PQC Encryption Standards
-		to replace it.
+		RSA is an asymetric encryption. On an easy to understand level, in Asymetric Encryption you have 2 keys. This goes for all asymetric encryption also including PGP and the like. You have a Public Key(PuK) and a Private Key(PrK). The Public key is as it's name states allowed to be completley public and out on the internet, for PGP for example it's quiet common to either use WKD(Web-Key-Directory) or Keyservers to distribute these public keys. The reason is that to compute the RSA or such standards PrK key from a sufficiently long key could take longer than the age of the universe to compute the PrK from the PuK. NIST in there May 2020 paper stated that an RSA key of a length of 2048 has a Security Strength of 112 bits.
 	</p>
 	<p>
 	Add expand button here

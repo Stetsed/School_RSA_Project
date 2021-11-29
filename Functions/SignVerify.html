@@ -72,15 +72,15 @@ T0OR3JJ/SMrevIhQWwIDAQAB
     <input id="Verify" class="button" type="button" value="Verify" /><br/>
     <h3> What are we doing?</h3>
     <p>
-      Here we have 2 processes which I will explain, verification and singing: 
+      Here we have 2 processes which I will explain, verification and singing:
 
       Let's start with singing, this works by using the mathmatical link between a public and private key, you sign a message with the RSA PrK and then somebody with the signature, combined with the correct hash and PuK will prove that it was signed by that specific private key. This is commonly used in secure exchanges because you know that the message was 100% from that recipient, if the key hasn't been compromised.
       <br>
       <br>
-      We implement singing with the JSEncrypt library which has a function which takes the arguments from the "PrivKey" field, the message from "Input" and the SHA512 algorithm to sign the message.
+      We implement singing with the JSEncrypt library which has a function which takes the arguments from the "PrivKey" field, the message from "Input" and the SHA512 algorithm which is selected to sign the message.
       <br>
       <br>
-      Now we have verifying, this works by taking as said above the PuK, The Message and the correct algorithm. This then uses the mathmatical link and with the PuK you can verify that the message was signed by the private key linked to the public key. 
+      Now we have verifying, this works by taking as said above the PuK, The Message and the correct algorithm. This then uses the mathmatical link and with the PuK you can verify that the message was signed by the private key linked to the public key.
       <br>
       <br>
       We implement verifying with the JSEncrypt library, which has a function to perform this. It takes the arguments from "Pubkey", "Input" and the SHA512 algorithm and in that way verifys the message
