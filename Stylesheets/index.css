@@ -17,3 +17,13 @@ body {
   height: auto;
   text-align: center
 }
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(131, 131, 131, 0.6);
+  color: white;
+  text-align: center;
+}
