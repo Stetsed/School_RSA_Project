@@ -13,4 +13,4 @@ Each subpage in the website has a description of what we are doing in terms of J
 
 Thanks to Travist for his awesome JSEncrypt Library: https://github.com/travist/jsencrypt
 
-And ofcourse thanks to the people on stackoverflow.
+And ofcourse thanks to the internet
