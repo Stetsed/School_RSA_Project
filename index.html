@@ -2,9 +2,8 @@
 <html>
 
 <head>
-	<!-- Here we define the stylesheet for the Menu, and the background color. -->
+	<!-- CSS Stuff including external stylesheets and Icons -->
 	<link href="/Stylesheets/index.css" rel="stylesheet">
-	<!-- This section handles all the Style's and JS for the top navbar -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="/Stylesheets/burger.css" rel="stylesheet">
 	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit, and some other stuff -->
@@ -40,7 +39,10 @@
 	</p>
 	<h3 class="parapgrah"> Basics of RSA </h3>
 	<p class="parapgrah">
-		RSA is an asymetric encryption. On an easy to understand level, in Asymetric Encryption you have 2 keys. This goes for all asymetric encryption also including PGP and the like. You have a Public Key(PuK) and a Private Key(PrK). The Public key is as it's name states allowed to be completley public and out on the internet, for PGP for example it's quiet common to either use WKD(Web-Key-Directory) or Keyservers to distribute these public keys. The reason is that to compute the RSA or such standards PrK key from a sufficiently long key could take longer than the age of the universe to compute the PrK from the PuK. NIST in there May 2020 paper stated that an RSA key of a length of 2048 has a Security Strength of 112 bits which they classified as strong enough to secure classified documents.
+		RSA is an asymetric encryption. On an easy to understand level, in Asymetric Encryption you have 2 keys. This goes for all asymetric encryption also including PGP and the like. You have a Public Key(PuK) and a Private Key(PrK). The Public key is as it's name states allowed to be completley public and out on the internet, for PGP for example it's quiet common to either use WKD(Web-Key-Directory) or Keyservers to distribute these public keys. The reason is that to compute the RSA or such standards PrK key from a sufficiently long key could take longer than the age of the universe to compute the PrK from the PuK. NIST in there May 2020 <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-175Br1.pdf">paper</a> stated that an RSA key of a length of 2048 has a Security Strength of 112 bits which they classified as strong enough to secure classified documents.
+    <br>
+    <br>
+    Asymetric Encryptions are most commonly used to secure traffic between 2 destinations, the recipiant and the sender. What happens is the sender retrieves the public-key of the recipiant, how that's distributed can vary. It can be that it's exchanged in real life or using a known communications channel between the recipiant and the sender. Then the recipiant encrypts the message they want to send with the public-key and send that encrypted message to the recipiant who then decrypts it with the private-key. What this means is that once it's encrypted nobody except the recipiant or the holder of the private-key can decrypt it.
 	</p>
 <div class="footer">
   <p><a href="https://github.com/Stetsed/School_Website_Project">Github</a></p>
