@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+	<!-- CSS Stuff including external stylesheets and Icons -->
+	<link href="/Stylesheets/stylerino.css" rel="stylesheet">
+	<link href="/Stylesheets/index.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/Stylesheets/burger.css" rel="stylesheet">
+	<!-- Here we define the title of the website which is what is shown at the top of the website when you visit, and some other stuff -->
+	<title>JavaScript RSA Contact</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="School Project, Simple RSA Project">
+	<meta name="description" content="Contains simple RSA explination, RSA Funtions">
+	<meta name="author" content="Poggers">
+</head>
+
+<body>
+	<ul class="menu">
+		<li><a class="menuItem" href="/index.html">Home</a></li>
+		<li><a class="menuItem" href="/Functions/decrypt.html">Decrypt</a></li>
+		<li><a class="menuItem" href="/Functions/encrypt.html">Encrypt</a></li>
+		<li><a class="menuItem" href="/Functions/generate.html">Generate</a></li>
+		<li><a class="menuItem" href="/Functions/SignVerify.html">Sign/Verify</a></li>
+    <li><a class="menuItem" href="/Functions/Contact.html">Contact</a></li>
+	</ul>
+	<button class="hamburger">
+    <!-- material icons https://material.io/resources/icons/ -->
+    <i class="menuIcon material-icons">menu</i>
+    <i class="closeIcon material-icons">close</i>
+  </button>
+	<label class='CenterLabel' for="privkey">Email</label><br/>
+    <textarea id="privkey" class="contactdefaultTextBox" cols="30"></textarea><br/>
+    <div>
+      <input type="checkbox" id="SubscribeMail" name="SubscribeMail" checked>
+      <label for="scales">Subscribe</label>
+    </div>
+  <div>
+    <input type="radio" id="Cats" name="drone" value="Cats" checked>
+    <label for="huey">Cats</label>
+    <input type="radio" id="Dogs" name="drone" value="Dogs">
+    <label for="dewey">Dogs</label>
+  </div>
+    <input id="LaunchItBoys" class="button" type="button" value="LaunchItBoys" /><br/>
+  <div class="footer">
+    <p>This page does nothing, it's simply for some requirments.</p>
+  </div>
+</body>
+<script type="text/Javascript" src="/Javascript/burger.js"></script>
+</html>

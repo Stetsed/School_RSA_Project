@@ -6,6 +6,7 @@ body {
   font-family: "Baloo 2", sans-serif;
   background-image: url("/Matrix.jpg");
   background-color: #ffffff;
+  color:white;
   padding: 8rem;
 }
 
@@ -26,4 +27,22 @@ body {
   background-color: rgb(131, 131, 131, 0.6);
   color: white;
   text-align: center;
+}
+
+.Submit{
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+    background-color : #505050;
+    overflow-y: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.contactdefaultTextBox {
+    height: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-color : #505050;
+    overflow-y: hidden;
 }
